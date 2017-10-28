@@ -39,5 +39,12 @@ describe('Encryption', () => {
       expect(fila).toBe('ESTAS CERCA');
     });
 
+    it('desencripta mensaje biblioteca', () => {
+      let mensaje = { fila: '20 6 25 6', mensaje: 'YMNA KT KZ HOHROUZKIG' };
+      const fila = instance.desencriptarMensajeComplejo('20 6 25 6', 'YMNA KT KZ HOHROUZKIG');
+      expect(fila).toBe('ESTG EN LA BIBLIOTECA');
+    });
+
+
   });
 });
