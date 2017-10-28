@@ -16,4 +16,11 @@ describe('Encryption', () => {
       expect(instance.state).toEqual({});
     });
   });
+
+  describe('desencriptador', () => {
+    it('desencripta bien', () => {
+      const palabra = instance.desencripta('POHAOB');
+      expect(palabra).toBe('BATMAN');
+    });
+  });
 });

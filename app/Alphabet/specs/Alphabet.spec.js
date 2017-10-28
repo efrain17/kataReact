@@ -16,22 +16,26 @@ describe('Alphabet', () => {
       expect(instance.state).toEqual({
         alphabet: [
           'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-          'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 
+          'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 
           'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
         ]
       });
     });
   });
 
-  describe('on generarAlphabet', () => {
-    fit('el alfabeto esta completo', () => {
+  describe('alfabeto', () => {
+    it('el alfabeto esta completo', () => {
       const tabla = instance.generarTabla();
 
-      expect(tabla.length).toBe(26);
-      expect(tabla[0]).toBe('BCDEFGHIJKLMOPQRSTUVWXYZAB'); 
+      expect(tabla.length).toBe(25);
+      expect(tabla[0]).toBe('BCDEFGHIJKLMNOPQRSTUVWXYZA'); 
 
-      expect(tabla[25]).toBe('ABCDEFGHIJKLMOPQRSTUVWXYZ');      
+      expect(tabla[24]).toBe('ZABCDEFGHIJKLMNOPQRSTUVWXY');      
 
+    });
+
+    it('esta bien el render', () => {
+      expect(component.find('div').length).toBe(25);
     });
 
   });

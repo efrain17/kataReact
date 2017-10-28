@@ -5,6 +5,17 @@ class Encryption extends Component {
     super(props);
     this.state = {};
   }
+
+  desencripta(palabra) {
+    let tabla = [];
+    let arrayPalabra = [];
+    let palabra = '';
+    arrayPalabra.map(letra => {
+      let letraDesencriptada = tabla.find(fila => fila[0] == letra);
+      palabra = palabra + letraDesencriptada;
+    });
+    return palabra;
+  }
   
   render() {
     return (
