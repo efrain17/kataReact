@@ -17,12 +17,13 @@ export class Alphabet extends Component {
     let numeroLetra = 0;
     let fila = '';
     for (let i = 1; i <= 26; i++) {
-      numeroLetra = i + 1;
-      for (let x = 1; x <= 26; i++) {
-        numeroLetra = numeroLetra >= 26 ? 1 : numeroLetra + 1;
-        fila = fila + this.state.alphabet[numeroLetra];
+      numeroLetra = i;
+      for (let x = 1; x <= 26; x++) {   
+        fila = fila + (Boolean(this.state.alphabet[numeroLetra]) ? this.state.alphabet[numeroLetra] : '');
+        numeroLetra = numeroLetra >= 24 ? 0 : numeroLetra + 1;
       }
       tabla.push(fila);
+      fila = '';
     }
     return tabla;
   }
