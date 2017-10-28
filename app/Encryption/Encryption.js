@@ -6,15 +6,18 @@ class Encryption extends Component {
     this.state = {};
   }
 
-  desencripta(palabra) {
-    let tabla = [];
-    let arrayPalabra = [];
-    let palabra = '';
+  desencripta(palabra, fila) {
+    let arrayFila = fila.split('');
+    let arrayPalabra = palabra.split('');
+    let letraIndice;
+    let palabraDescrip = '';
+    let indice;
     arrayPalabra.map(letra => {
-      let letraDesencriptada = tabla.find(fila => fila[0] == letra);
-      palabra = palabra + letraDesencriptada;
+      letraIndice = arrayFila.indexOf(letra) + 12;
+      indice = letraIndice > 25 ? letraIndice - 26: letraIndice;
+      palabraDescrip = palabraDescrip + arrayFila[indice];
     });
-    return palabra;
+    return palabraDescrip;
   }
   
   render() {

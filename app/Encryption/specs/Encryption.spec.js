@@ -18,9 +18,15 @@ describe('Encryption', () => {
   });
 
   describe('desencriptador', () => {
-    it('desencripta bien', () => {
-      const palabra = instance.desencripta('POHAOB');
+    it('desencripta Batman', () => {
+      const palabra = instance.desencripta('POHAOB', 'OPQRSTUVWXYZABCDEFGHIJKLMN');
       expect(palabra).toBe('BATMAN');
     });
+
+     it('desencripta Batman', () => {
+      const palabra = instance.desencripta('VCZO', 'OPQRSTUVWXYZABCDEFGHIJKLMN');
+      expect(palabra).toBe('HOLA');
+    });
+
   });
 });
